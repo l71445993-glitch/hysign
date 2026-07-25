@@ -1,0 +1,17 @@
+# Xcode / build 产物
+LCSignClone/build/
+LCSignClone/Payload/
+LCSignClone/*.xcodeproj/
+LCSignClone/*.ipa
+*.ipa
+
+# SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+
+# macOS
+.DS_Store
+
+# 生成的图标副本（源图在 assets 内）
+LCSignClone/hysign-icon-1024.png
