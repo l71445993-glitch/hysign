@@ -102,11 +102,7 @@ struct OutputDetailView: View {
                 }
             }
             .navigationTitle("输出详情")
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("关闭") { dismiss() }
-                }
-            }
+            .navigationBarItems(leading: Button("关闭") { dismiss() })
         }
     }
 }

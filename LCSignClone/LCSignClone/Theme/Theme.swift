@@ -1,8 +1,8 @@
 import SwiftUI
 
 enum Theme {
-    /// LCSign 偏系统蓝；学习版用可配置强调色，默认 #0A84FF
-    static var accent: Color { Color(hex: SettingsStore.sharedAccentHex) }
+    /// 默认强调色；运行时可在设置里改 accentHex，主界面用 `.tint(Color(hex:))`
+    static let accent = Color(hex: 0x0A84FF)
     static let success = Color(hex: 0x34C759)
     static let warning = Color(hex: 0xFF9500)
     static let danger = Color(hex: 0xFF3B30)

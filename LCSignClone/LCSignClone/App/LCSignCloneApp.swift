@@ -8,7 +8,7 @@ struct HuaYangSignApp: App {
         WindowGroup {
             RootTabView()
                 .environmentObject(app)
-                .tint(Theme.accent)
+                .tint(Color(hex: app.settings.accentHex))
         }
     }
 }
@@ -23,7 +23,8 @@ final class AppState: ObservableObject {
     let signing: SigningEngine
     let injector: InjectorService
     let installer: LocalInstallServer
-    let settings: SettingsStore
+    /// 需为 var，SwiftUI 才能通过 `$app.settings.xxx` 生成 Binding
+    var settings: SettingsStore
 
     init() {
         let certs = CertificateStore()

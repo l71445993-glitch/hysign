@@ -136,11 +136,7 @@ struct ProjectDetailView: View {
                 handlePicked(result)
             }
             .navigationTitle(project.name)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("关闭") { dismiss() }
-                }
-            }
+            .navigationBarItems(leading: Button("关闭") { dismiss() })
             .sheet(isPresented: $showJob) { SigningProgressSheet() }
         }
     }
