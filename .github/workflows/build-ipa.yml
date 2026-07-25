@@ -30,18 +30,19 @@ jobs:
         run: |
           set -euo pipefail
           xcodegen generate
+          xcodebuild -list -project HuaYangSign.xcodeproj
           xcodebuild \
             -project HuaYangSign.xcodeproj \
             -scheme HuaYangSign \
             -configuration Release \
             -destination 'generic/platform=iOS' \
             -derivedDataPath build \
-            -resolvePackageDependencies \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             build
           APP=$(find build/Build/Products/Release-iphoneos -name "*.app" -maxdepth 1 | head -1)
+          echo "APP=$APP"
           test -n "$APP"
           rm -rf Payload HuaYangSign.ipa
           mkdir Payload
