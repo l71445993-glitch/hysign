@@ -2,7 +2,7 @@ name: HuaYangSign
 options:
   bundleIdPrefix: com.huayang
   deploymentTarget:
-    iOS: "15.0"
+    iOS: "16.0"
   createIntermediateGroups: true
   # 兼容 CI 上的 Xcode（避免 objectVersion 过高打不开）
   objectVersion: 56
